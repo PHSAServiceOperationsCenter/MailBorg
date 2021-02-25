@@ -1,0 +1,9 @@
+datetime
+email_validator
+exchangelib
+PySimpleGUI
+pytimeparse
+pywin32
+requests
+retry
+tzlocal
