@@ -683,8 +683,7 @@ class WitnessMessages:  # pylint: disable=too-many-instance-attributes
                      message_uuid=str(self.message.message_uuid),
                      from_email=self.message.
                      account_for_message.primary_smtp_address,
-                     to_emails=', '.join([email for email in
-                                          self.message.message.to_recipients]))
+                     to_emails=self.message.message.to_recipients)
         try:
             send_message(self.message)
 
@@ -771,9 +770,7 @@ class WitnessMessages:  # pylint: disable=too-many-instance-attributes
                      primary_smtp_address,
                      message_uuid=str(self.message.message_uuid),
                      from_email = self.message.account_for_message.primary_smtp_address,
-                     to_emails=', '.join(
-                         [r.email_address for r in
-                          self.message.message.to_recipients]))
+                     to_emails = self.message.message.to_recipients)
 
         #make a copy of self.accounts so we can delete accounts as we receive the message from them.
         self.unseen_recipients = [r for r in self.accounts] 
